@@ -7,12 +7,16 @@ import 'package:scanner/pages/create_result/create_result_binding.dart';
 import 'package:scanner/pages/create_result/create_result_view.dart';
 import 'package:scanner/pages/creating/creating_binding.dart';
 import 'package:scanner/pages/creating/creating_view.dart';
+import 'package:scanner/pages/edit_code/edit_code_binding.dart';
+import 'package:scanner/pages/edit_code/edit_code_view.dart';
 import 'package:scanner/pages/scan_result/scan_result_binding.dart';
 import 'package:scanner/pages/scan_result/scan_result_view.dart';
 import 'package:scanner/pages/scaning/scaning_binding.dart';
 import 'package:scanner/pages/scaning/scaning_view.dart';
 import 'package:scanner/pages/scanner_main/scanner_main_binding.dart';
 import 'package:scanner/pages/scanner_main/scanner_main_view.dart';
+
+import 'db_scanner/dorain_apl.dart';
 
 Color primaryColor = Colors.black;
 Color bgColor = const Color(0xfffafafa);
@@ -31,7 +35,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Codes,
-      initialRoute: '/scanner_main',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -84,9 +88,11 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Codes = [
+  GetPage(name: '/', page: ()  => const EditCodeView(), binding: EditCodeBinding()),
   GetPage(name: '/scanner_main', page: ()  => ScannerMainPage(), binding: ScannerMainBinding()),
   GetPage(name: '/scanning', page: ()  => const ScaningPage(), binding: ScaningBinding()),
   GetPage(name: '/scan_result', page: ()  => ScanResultPage(), binding: ScanResultBinding()),
+  GetPage(name: '/scan_edit', page: ()  => const DorainApl()),
   GetPage(name: '/creating', page: ()  => CreatingPage(), binding: CreatingBinding()),
   GetPage(name: '/create_result', page: ()  => CreateResultPage(), binding: CreateResultBinding()),
   GetPage(name: '/create_records', page: ()  => CreateRecordsPage(), binding: CreateRecordsBinding()),

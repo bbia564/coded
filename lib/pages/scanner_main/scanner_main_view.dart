@@ -14,7 +14,7 @@ class ScannerMainPage extends GetView<ScannerMainLogic> {
     final titles = [
       ['QR code scanning', 'Bar code scanning'],
       ['QR code create', 'Bar code create'],
-      ['Create records', 'About us']
+      ['Create records', 'Version(1.0.0)']
     ];
     return Container(
       width: double.infinity,
@@ -51,7 +51,7 @@ class ScannerMainPage extends GetView<ScannerMainLogic> {
           if (index == 0) {
               Get.toNamed('/create_records');
           } else {
-              controller.aboutScannerUS(context);
+              // controller.aboutScannerUS(context);
           }
           break;
       }

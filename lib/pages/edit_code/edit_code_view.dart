@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 
 import 'edit_code_logic.dart';
 
-class TabBescView extends GetView<PageLogic> {
-  const TabBescView({super.key});
+class EditCodeView extends GetView<PageLogic> {
+  const EditCodeView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.prohaska.value
-              ? const CircularProgressIndicator(color: Colors.orange)
+          () => controller.zieme.value
+              ? const CircularProgressIndicator(color: Colors.black)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class TabBescView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.pdtxwesa();
+              controller.knle();
             },
             icon: const Icon(
               Icons.restart_alt,
